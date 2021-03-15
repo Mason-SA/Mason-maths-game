@@ -6,7 +6,7 @@ import java.util.Scanner;
 /**
  * A simple console-based maths quiz for primary school children.
  *
- * @author Author1
+ * @author Stephen Anthony Mason
  * @author Author2
  */
 public class Main {
