@@ -2,7 +2,7 @@ package au.edu.usc.mathgame;
 import java.util.Scanner;
 import java.util.Random;
 
-public class Question {
+public class Question   {
     private int value1;
     private int value2;
     private String operator;
@@ -15,7 +15,7 @@ public class Question {
 
 
 
-    public Question(Random rand){
+    public Question(Random rand)    {
         this.rand = rand;
         value1 = rand.nextInt(9) + 1;
         value2 = rand.nextInt(9) + 1;
@@ -42,14 +42,17 @@ public class Question {
 
     }
 
+    public Question(int i, int i1, String s)    {
+    }
 
-    public void showQuestion(){
+
+    public void showQuestion()  {
 
         System.out.println("What is " + value1 + operator + value2 + "?");
 
     }
 
-    public void checkAnswer(){
+    public void checkAnswer()   {
         Scanner input = new Scanner(System.in);
         int correct = answer;
         int response = input.nextInt();
@@ -57,10 +60,14 @@ public class Question {
             good = true;
             System.out.println("Correct!");
             score ++;
-        }else{
+        }  else{
             System.out.println("Incorrect. The correct answer is " + correct + "!");
         }
         System.out.println("Your score is " + score);
 
+    }
+
+    public boolean checkAnswer(int i)   {
+        return false;
     }
 }

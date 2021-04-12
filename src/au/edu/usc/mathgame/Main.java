@@ -8,40 +8,34 @@ import java.util.Scanner;
  * @author Stephen Anthony Mason
  * @author Author2
  */
-public class Main {
+public class Main   {
 
-    public static void main(String[] args) {
+    public void playGame()  {
         Random rand = new Random();
 
+        for (int i = 0; i < 10; i++)    {
             Question q1 = new Question(rand);
+            q1.showQuestion();
+            q1.checkAnswer();
 
-                q1.showQuestion();
-                q1.checkAnswer();
-
-
-
-                Question q2 = new Question(rand);
-
-                q2.showQuestion();
-                q2.checkAnswer();
-
-       //Question q1 = new Question(3, 5);
-
-       //q1.showQuestion();
-        //Random rand = new Random();
-        //Scanner input = new Scanner(System.in);
-        //
-        //// now ask some random addition questions.
-        //for (int i = 0; i < 10; i++) {
-        //    int a = rand.nextInt(20);
-        //    int b = rand.nextInt(20);
-        //    int correct = a + b;
-        //    System.out.printf("What is %2d + %2d? ", a, b);
-        //    int response = input.nextInt();
-        //    if (response == correct) {
-        //        System.out.printf("  Yes!\n");
-        //    } else {
-        //        System.out.printf("  No, the answer is %d.\n", correct);
-        //    }
         }
     }
+
+    public void playMultipleGames() {
+        boolean play = true;
+        Scanner input = new Scanner(System.in);
+        while (play)    {
+            playGame();
+            System.out.println("Would you like to play again Y/N?");
+            play = input.nextLine().trim().equalsIgnoreCase("y");
+        }
+
+    }
+
+    public static void main(String[] args)  {
+
+        Main main = new Main();
+        main.playMultipleGames();
+
+        }
+}
